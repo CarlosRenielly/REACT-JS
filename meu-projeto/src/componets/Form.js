@@ -1,3 +1,7 @@
+
+
+
+
 function Form (){
   
   function cadastrarUsuario (e){
@@ -5,12 +9,21 @@ function Form (){
     console.log("Cadastrou o usuario!")
   }
   
+
+
+
   return(
     <div>
       <h1>Meu cadastro</h1>
       <form onSubmit={cadastrarUsuario} >
         <div>
-          <input type="text" name="" id="" pleceholder ="Digite seu nome" />
+          <label htmlFor="name">Nome:</label>
+          <input type="text" name="name" id ="name"  placeholder ="Digite seu nome" />
+          onChange = {(e) => (e.target.value)}
+        </div>
+        <div>
+          <label htmlFor="passoword">Senha:</label>
+          <input type="passoword" name="passoword" id ="passoword"  placeholder ="Digite sua senha" />
         </div>
           <input type="submit" name="" value ="Cadastrar" />
       </form>
