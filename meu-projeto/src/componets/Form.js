@@ -1,7 +1,4 @@
 
-
-
-
 function Form (){
   
   function cadastrarUsuario (e){

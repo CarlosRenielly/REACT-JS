@@ -5,7 +5,7 @@ function Frase (){
     <div className= {style.fraseContainer}>
       <p className= {style.fraseContent}>Essa é a frase mais linda!</p>
       <p className= {style.fraseContent}>Essa é a frase mais linda!</p>
-    </div>
+    </div>    
   )
 }
 
