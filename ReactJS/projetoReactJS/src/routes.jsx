@@ -1,18 +1,19 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Home from './Pages/Home'
-import Sobre from './Pages/Sobre'
-import Contato from './Pages/Contato'
+import Filme from './Pages/Filmes'
+import Header from './Componets/Header'
 
 function RouterApp (){
   return(
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/sobre' element={<Sobre/>} />
-        <Route path='/Contato' element ={<Contato/>} />
-      </Routes>    
-    </BrowserRouter>
+      <BrowserRouter>
+        <Header/>
+        <Routes>
+          <Route path='/' element ={<Home/>}/>
+          <Route path='/filme:id' element ={<Filme/>}/>
+        </Routes>
+        
+      </BrowserRouter>
   )
 }
 
