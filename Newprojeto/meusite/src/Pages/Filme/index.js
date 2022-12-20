@@ -1,7 +1,7 @@
 
 import './filme-info.css'
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import api from '../../services/api';
 
 
@@ -9,6 +9,7 @@ import api from '../../services/api';
 
 function Filme(){
   const {id} = useParams();
+  const navigate = useNavigate();
   const [filme, setFilme] = useState({});
   const [loading, setLoading] =useState(true);
 
@@ -26,6 +27,8 @@ function Filme(){
       })
       .catch(()=>{
         console.log("FILME NÃO ENCONTRADO")
+        navigate("/", {replace:true});
+        return;
       })
     }
     loadFilme();
@@ -33,7 +36,7 @@ function Filme(){
     return() => {
       console.log("COMPONENTE FOI DESMONSTADO")
     }
-  },[])
+  },[navigate, id])
 
     if(loading){
       return(
@@ -55,7 +58,7 @@ function Filme(){
       <div className="area-buttons">
         <button>Salvar</button>
         <button>
-          <a href="#">
+          <a target="_blank" href={`https://youtube.com/results?search_query= ${filme.title} Trailer`} rel="noreferrer">
             Trailer
           </a>
         </button>
